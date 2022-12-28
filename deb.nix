@@ -9,9 +9,7 @@ stdenv.mkDerivation rec {
 
   debArch = {
     x86_64 = "amd64";
-    i686 = "i386";
-    aarch64 = "arm64";
-    armv7l = "armhf";
+    arm64 = "arm64";
   }.${stdenv.hostPlatform.linuxArch} or (throw "Unsupported architecture: ${stdenv.hostPlatform.linuxArch}");
 
   debControlFile = ''
